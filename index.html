@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
     <title>Document</title>
 </head>
 
@@ -13,11 +15,17 @@
         <select name="Genres" id="genre-list">
             <option value="choose">Choose a genre from list</option>
         </select>
+
         <form>
             City:<input type="text" id="inputCity">
         </form>
+
         <button id="submit">Submit</button>
         <div></div>
+
+
+        <!-- David -->
+        <div id='map' style='width: 400px; height: 300px;'></div>
     </container>
 
 
@@ -34,13 +42,43 @@
         var input = ""
         var trackName = ""
         $("#genre-list").change(function () {
-            console.log(this.value)
+            // console.log(this.value)
             selectedId = this.value
         });
 
         $("#submit").click(function (event) {
             input = $('input').val()
-            console.log(input)
+            // console.log(input)
+
+            // 
+            mapboxgl.accessToken = 'pk.eyJ1IjoiZHJvbWFuMDkiLCJhIjoiY2tpcGFzbm1nMGJkazJxbzFsOGg3dW5ueCJ9.nKYluwYKT0XqFDXaafIJTQ';
+            var city = input
+            var queryUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + city + ".json?access_token=pk.eyJ1IjoiZHJvbWFuMDkiLCJhIjoiY2tpcGFzbm1nMGJkazJxbzFsOGg3dW5ueCJ9.nKYluwYKT0XqFDXaafIJTQ"
+
+            $.ajax({
+                url: queryUrl,
+                method: "Get"
+            }).then(function (response) {
+                console.log(response)
+                var lng = response.features[0].center[0];
+                var lat = response.features[0].center[1];
+                console.log(lng, lat)
+
+
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+                    center: [lng, lat], // starting position [lng, lat]
+                    zoom: 8 // starting zoom
+                });
+
+            })
+
+            console.log(map)
+
+
+            // 
+
             event.preventDefault()
             $.ajax({
                 type: "GET",
@@ -58,7 +96,7 @@
                 jsonpCallback: 'jsonp_callback',
                 contentType: 'application/json',
                 success: function (data) {
-                    console.log(data);
+                    // console.log(data);
 
                     if (data.message.body.track_list[0]) {
                         trackName = JSON.stringify(data.message.body.track_list[0].track.track_name)
@@ -66,12 +104,11 @@
 
                         trackNameParse = JSON.parse(trackName)
                         artistNameParse = JSON.parse(artistName)
-                        // trackName = trackName.replace('"', '')
 
                         $('div').append($(`<p>${trackNameParse}</p>`));
                         $('div').append($(`<p>${artistNameParse}</p>`));
 
-                    } 
+                    }
 
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
@@ -98,8 +135,27 @@
             }
         }
 
+        // David
 
 
+
+        // var key = "55ad3984ce14bc14559d41e350f4290e"
+        // var quryUrl = "https://api.musixmatch.com/ws/1.1/chart.artists.get?format=jsonp&callback=callback&country=us&apikey=55ad3984ce14bc14559d41e350f4290e"
+        // $.ajax({
+        //     url: quryUrl,
+        //     method: "GET"
+        // }).then(function (response) {
+        //     console.log(response)
+        // })
+
+
+        // var imgUrl = "https://pixabay.com/api/?key=19570887-9ab24a9c116677c7d4d20872b&q=chicago&image_type=photo"
+        // $.ajax({
+        //     url: imgUrl,
+        //     method: "GET"
+        // }).then(function (img) {
+        //     console.log(img)
+        // })
 
 
 
@@ -125,6 +181,8 @@
         // Music add-ons
             // Get song chords with songsterr
                 // http://www.songsterr.com/a/ra/songs.json?pattern=Marley
+
+
 
 
 
