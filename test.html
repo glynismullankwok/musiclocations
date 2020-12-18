@@ -60,6 +60,11 @@ $.ajax({
     method: "GET"
 }).then(function(img){
     console.log(img)
+    var imgCode = img.hits[0].largeImageURL
+    console.log(imgCode)
+    var imgDiv = $("<img>")
+    imgDiv.attr("src", imgCode)
+    $(".img").append(imgDiv)
 })
 </script>
     
