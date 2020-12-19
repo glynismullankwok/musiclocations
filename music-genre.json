@@ -1,6 +1,7 @@
 // https://developer.musixmatch.com/documentation/api-reference/music-genres-get
 
 // Full list of music genres
+document.cookie = "Set-Cookie: SameSite=None; Secure"
 
 data = {
   "message": {
