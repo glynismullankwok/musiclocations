@@ -1,53 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
     <link rel="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
-    <link rel="stylesheet" href="./style.css">
 
-    <title>Document</title>
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="style1.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
 
+
+    <title>Project 1</title>
 </head>
+
 <body>
-    <!-- <style>
-        img {
-  border-radius: 8px;
-}
-        body {
-            margin: 80px auto;
-            text-align: center;
-            background-color: #e4ebe8;
-           border-radius: 10px;
-        border: 4px double #cccccc;
-        font-size:28px;
-        width: 300px;
-        
+    <header class="subnav-hero-section">
+        <h1 class="subnav-hero-headline">Music<small>Listeners</small></h1>
+        <ul class="subnav-hero-subnav">
+            <li><a href="#" class="is-active">Music!..</a></li>
+            <li><a href="index.html">What's that one part?</a></li>
+            <li><a target="_blank" href="https://zurb.com/responsive">Share With family & Friends!</a></li>
+        </ul>
+    </header>
+    <form action="">
 
-        }
-    </style> -->
+        <section class="lyric-search">
+            <!-- <div class="lyric-search-inner">
+                <p class="subheader">Check out all the songs search below!</p>
+            </div> -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                
-                <a href="#!" class="btn wave-effec-deep-purple lighten-3">Play Music!</a>
-                
+            <div class="input-group">
+                <input class="input-group-field" type="text" placeholder="Enter city, state, or country here">
+                <div class="input-group-button">
+                    <input type="submit" class="button" value="Search" id="submit">
+                </div>
             </div>
-        </div>
-    </div> 
-     <button type="button">Submit</button>
-     <h2>Rounded Images</h2>
-<p>Use the border-radius property to create rounded images:</p>
 
-<img src="m" alt="" style="width:150px">
-    
+            <label for="Genres">Choose a genre:</label>
+            <select class="genres" id="genre-list">
+                <option value="choose">Choose a genre from list</option>
+            </select>
 
+            <label for="results">Number of records</label>
+            <select class="records" name="results" id="num-records">
+                <option value="5">Select number of records</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+            </select>
+
+        </section>
+        <a></a>
+        <h4></h4>
+        <!-- map added -->
+        <div id='map' style='width: 400px; height: 300px;'></div>
+
+        <div class="img"></div>
+
+    </form>
+    </div>
+    </section><!-- Compressed jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
-    <script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
+    <!-- Personal jQuery -->
+    <script type='text/javascript' src='music-genre.json'></script>
+    <script type='text/javascript' src="script.js"></script>
 
-    </script>
 </body>
+
 </html>
