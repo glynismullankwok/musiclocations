@@ -4,6 +4,8 @@ document.cookie = "Set-Cookie: SameSite=None; Secure"
 // Points to JSON file of genres
 var mydata = data
 
+
+
 // adds these to global variable
 var selectedId = ""
 var input = ""
@@ -13,20 +15,23 @@ var selectedRecords = 5
 
 // Event listener for genre drop down 
 $("#genre-list").change(function () {
-    // console.log(this.value)
     selectedId = this.value
+
 });
 
 // Event listener for number of results drop down
 $("#num-records").change(function () {
     selectedRecords = this.value
-    console.log(selectedRecords)
+    // console.log(selectedRecords)
 
 })
 
 // Submit button event listener
 $("#submit").click(function (event) {
     event.preventDefault()
+    console.log("enter")
+    $('p').remove()
+    $('a').remove()
 
     // Grabs the city name from input
     input = $('input').val()
@@ -39,9 +44,9 @@ $("#submit").click(function (event) {
     }).then(function (img) {
         var randomImg = img.hits // gets array 
         var ran = Math.floor(Math.random() * randomImg.length) // randomizes length of array. outputs a number 
-        console.log(ran)
+        // console.log(ran)
         var newImage = img.hits[ran].largeImageURL //inputs number into array with image url
-        console.log(newImage)
+        // console.log(newImage)
         //appending to doc 
         var imgDiv = $("<img>")
         imgDiv.attr("src", newImage)
@@ -97,20 +102,64 @@ $("#submit").click(function (event) {
         contentType: 'application/json',
         success: function (data) {
             console.log(data);
-            console.log(selectedRecords)
+            // console.log(selectedRecords)
 
             // Loops through the number selected for 
             for (var i = 0; i < Number(selectedRecords); i++) {
 
                 // console.log(data.message.body.track_list[i])
                 // Gets track name, artist, URL of lyrics
-                trackName = JSON.stringify(data.message.body.track_list[i].track.track_name)
-                artistName = JSON.stringify(data.message.body.track_list[i].track.artist_name)
-                lyricsUrl = JSON.stringify(data.message.body.track_list[i].track.track_share_url)
+                var trackName = JSON.stringify(data.message.body.track_list[i].track.track_name)
+                var artistName = JSON.stringify(data.message.body.track_list[i].track.artist_name)
+                var lyricsUrl = JSON.stringify(data.message.body.track_list[i].track.track_share_url)
+                var trackId = JSON.stringify(data.message.body.track_list[i].track.track_id)
 
+                var trackIdforLyrics = data.message.body.track_list[i].track.track_id
+
+                console.log(trackIdforLyrics)
+                lyricsSnippet()
+                // ----------------------------
+
+                function lyricsSnippet() {
+                    $.ajax({
+                        type: "GET",
+                        data: {
+                            apikey: "4d79a850d35d2e78003074885fedf889",
+                            track_id: trackIdforLyrics,
+                            format: "jsonp",
+                            // callback: "jsonp_callback",
+                        },
+                        url: "https://api.musixmatch.com/ws/1.1/track.lyrics.get",
+                        dataType: "jsonp",
+                        // jsonpCallback: 'jsonp_callback',
+                        contentType: 'application/json',
+                        success: function (lyricsData) {
+
+                            if (lyricsData) {
+
+                                var lyrics = JSON.stringify(lyricsData.message.body.lyrics.lyrics_body)
+
+                                console.log(lyrics)
+
+
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            console.log(jqXHR);
+                            console.log(textStatus);
+                            console.log(errorThrown);
+                        }
+                    })
+
+                }
+                // console.log(`https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${trackid}&apikey=4d79a850d35d2e78003074885fedf889`)
+
+
+                // --------
+                lyricsParse = JSON.parse(lyricsUrl)
                 trackNameParse = JSON.parse(trackName)
                 artistNameParse = JSON.parse(artistName)
-                lyricsParse = JSON.parse(lyricsUrl)
+
 
                 // Appends the artist, URL, track name to DOM
                 $('h4').append($(`<p>${artistNameParse}</p>`));
@@ -128,17 +177,25 @@ $("#submit").click(function (event) {
 
 })
 
+
+
 // Creates a drop down list of genres
 for (var i = 0; i < 360; i++) {
+
 
     if (mydata.message.body.music_genre_list[i].music_genre.music_genre_parent_id === 34) {
 
 
         var genres = mydata.message.body.music_genre_list[i].music_genre.music_genre_name
 
+
+
+        // genres = genres.sort()
         var genreID = mydata.message.body.music_genre_list[i].music_genre.music_genre_id
 
+
         $('.genres').append($(`<option value="${genreID}">${genres}</option>`));
+
 
     }
 }
