@@ -34,7 +34,8 @@ $("#submit").click(function (event) {
     $('a').remove()
 
     // Grabs the city name from input
-    input = $('input').val()
+    input = $('#city-input').val()
+    console.log("hi")
 
     // Searches for an image based on city input
     var imgUrl = `https://pixabay.com/api/?key=19570887-9ab24a9c116677c7d4d20872b&q=${input}&image_type=photo`

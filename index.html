@@ -4,76 +4,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <title>Rock and Roam</title>
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Map -->
 
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
 
-    <link rel="stylesheet" href="style.css" />
-
-    <title>Rock and Roam</title>
 </head>
 
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <body>
-  
-    
+    <nav class="purple">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Rock and Roam</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+        </div>
+    </nav>
 
+    <br>
     <container>
-        <label for="Genres">Choose a genre:</label>
-        <select class="genres" id="genre-list">
-            <option value="choose">Choose a genre from list</option>
-        </select>
-
-        <label for="results">Number of records</label>
-        <select class="records" name="results" id="num-records">
-            <option value="5"></option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-        </select>
-
-        <form>
-            City:<input type="text" id="inputCity">
-        </form>
-
-        <button id="submit">Submit</button>
-        <a></a>
-        <h4></h4>
 
         <div class="row">
-          <div class="col s8 m7">
-            <div class="card">
-              <div class="card-image">
-                <!-- place picture link here -->
-                <!-- <img class="responsive-img" src=""> -->
-                <img src="">
-                <span class="card-title">City Images</span>
-              </div>
-              <div class="card-content">
-                <p>This image is of your chosen city.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
+            <form class="col s3">
+                <!-- <label>Choose the genre</label> -->
+                <select class="browser-default genres" id="genre-list">
+                    <option value="" disabled selected>Choose your genre</option>
+
+                </select>
+            </form>
+
+            <form class="col s3">
+                <select class="browser-default records" name="results" id="num-records">
+                    <option value="5">Select number of records</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </select>
+            </form>
+
+            <div class="col s6">
+                <div id='map' style='width: 400px; height: 300px;'></div>
             </div>
-          </div>
         </div>
 
 
-        <!-- David -->
-        <div id='map' style='width: 400px; height: 300px;'></div>
+
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <textarea id="city-input" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Enter city, state, or country here</label>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <form class="col s12">
+                <div class="input-group-button">
+                    <!-- <input type="submit" class="button" value="Search" id="submit"> -->
+
+                    <a class="waves-effect waves-light btn" id="submit">enter</a>
+                </div>
+            </form>
+        </div>
+        <a></a>
+        <h4></h4>
+        <!-- map added -->
+
+        <!-- <div id='map' style='width: 400px; height: 300px;'></div> -->
+
+        <div class="img"></div>
+
     </container>
+    <!-- Genre -->
+
+    <!-- Number of records -->
+
+    <!-- Input -->
+
+    <!-- Button -->
 
 
-    <div class="img"></div>
 
 
+    <!-- Script links -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- map -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+
+    <!-- List of genres -->
     <script type='text/javascript' src='music-genre.json'></script>
+    <!-- My script -->
     <script type='text/javascript' src="script.js"></script>
+
+
 
 </body>
 
