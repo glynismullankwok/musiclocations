@@ -69,13 +69,26 @@ body {
 .container {
   background-color: rgb(100, 100, 138);
   align-items: center;
-  width: 70%;
+  width: 80%;
   margin-left:20px;
   padding:20px;
+  border-radius: 20px;
 }
 .input-group {
   width: 80%;
   margin-left:20px;
   background-color: #ffff;
+  
 }
+.lyric-search {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+/* .input-group search{
+  background-color: rgb(185, 185, 218);
+  border-bottom-right-radius: 10px;
+  border: 2px gray solid;
+  border-radius: 20px;
+} */
 
