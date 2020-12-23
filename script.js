@@ -4,14 +4,27 @@ document.cookie = "Set-Cookie: SameSite=None; Secure"
 // Points to JSON file of genres
 var mydata = data
 
-$('.container').attr("style", "display:none")
-$('nav').attr("style", "display:none")
+document.addEventListener('imgLoaded',()=>{
+    const parallaxEffect = document.querySelectorAll('.parallax');
+    M.parallax.init(parallaxEffect, {});
+
+})
+$(document).ready(function () {
+    console.log($('.parallax'))
+    console.log($('.parallax').parallax())
+});
+
+// $('.search').attr("style", "display:none")
+// $('nav').attr("style", "display:none")
 
 $("#start").click(function (event) {
     event.preventDefault()
     $('.container').attr("style", "display:inline block")
     $('nav').attr("style", "display:inline block")
-    $('#start').attr("style", "display:none")
+    // $('#start').attr("style", "display:none")
+    $('.search').attr("style", "display:inline block")
+    // $('.welcome').attr("style", "display:none")
+
 })
 
 
@@ -61,10 +74,20 @@ $("#submit").click(function (event) {
             var newImage = img.hits[ran].largeImageURL //inputs number into array with image url
             // console.log(newImage)
             //appending to doc 
-            var imgDiv = $("<img>")
+            var imgDiv = $(`<img>`)
             imgDiv.attr("src", newImage)
+            // .attr('width','100%')
             $(".img").html(imgDiv)
 
+            document.addEventListener('imgLoaded',()=>{
+                const parallaxEffect = document.querySelectorAll('.parallax');
+                M.parallax.init(parallaxEffect, {});
+            
+            })
+            $(document).ready(function () {
+                console.log($('.parallax'))
+                console.log($('.parallax').parallax())
+            });
         })
 
 
@@ -175,8 +198,10 @@ $("#submit").click(function (event) {
 
 
                     // Appends the artist, URL, track name to DOM
-                    $('h4').append($(`<p>${artistNameParse}</p>`));
-                    $('h4').append($(`<p><a href=${lyricsParse} target="_blank">${trackNameParse}</a></p>`));
+                    $('h4').append($(`<p class="top-left">${artistNameParse}</p>`));
+                    $('h4').append($(`<p class="top-left"><a href=${lyricsParse} target="_blank">${trackNameParse}</a></p>`));
+
+                    
 
                 }
             },
