@@ -35,34 +35,32 @@
 
 
     <container>
+        <!-- start david -->
+
+        <!-- end david -->
 
         <div class="row">
-            <form class="col s3">
-                <!-- <label>Choose the genre</label> -->
-                <select class="browser-default genres" id="genre-list">
-                    <option value="" disabled selected>Choose your genre</option>
+            <div class="row">
+                <form class="col s3">
+                    <!-- <label>Choose the genre</label> -->
+                    <select class="browser-default genres" id="genre-list">
+                        <option value="" disabled selected>Choose your genre</option>
 
-                </select>
-            </form>
+                    </select>
+                </form>
 
-            <form class="col s3">
-                <select class="browser-default records" name="results" id="num-records">
-                    <option value="5">Select number of records</option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                </select>
-            </form>
-
-            
-            <div class="col s6">
-                <div id='map' style='width: 400px; height: 300px;'></div>
+                <form class="col s3">
+                    <select class="browser-default records" name="results" id="num-records">
+                        <option value="5">Select number of records</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                    </select>
+                </form>
             </div>
-        </div>
 
 
-
-        <div class="row">
+            <!-- <div class="row"> -->
             <form class="col s12">
                 <div class="row">
                     <div class="input-field col s6">
@@ -72,16 +70,22 @@
 
                 </div>
             </form>
-        </div>
-        <div class="row">
-            <form class="col s12">
-                <div class="input-group-button">
-                    <!-- <input type="submit" class="button" value="Search" id="submit"> -->
 
-                    <a class="waves-effect waves-light btn" id="submit">enter</a>
+            <div class="row">
+                <form class="col s6">
+                    <div class="input-group-button">
+                        <a class="waves-effect waves-light btn" id="submit">enter</a>
+                    </div>
+                </form>
+                <div class="col s6">
+                    <div id='map' style='width: 400px; height: 300px;'></div>
                 </div>
-            </form>
+            </div>
         </div>
+
+
+
+
         <a></a>
         <h4></h4>
         <!-- map added -->
