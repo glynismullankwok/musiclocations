@@ -4,12 +4,12 @@ document.cookie = "Set-Cookie: SameSite=None; Secure"
 // Points to JSON file of genres
 var mydata = data
 
-$('container').attr("style", "display:none")
+$('.container').attr("style", "display:none")
 $('nav').attr("style", "display:none")
 
 $("#start").click(function (event) {
     event.preventDefault()
-    $('container').attr("style", "display:inline block")
+    $('.container').attr("style", "display:inline block")
     $('nav').attr("style", "display:inline block")
     $('#start').attr("style", "display:none")
 })
@@ -40,7 +40,6 @@ $("#submit").click(function (event) {
     event.preventDefault()
 
     $('p').remove()
-    // $('a').remove()
 
     // Grabs the city name from input
     input = $('#city-input').val()

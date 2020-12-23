@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+
+   
+
+
+
+
+   
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+// mapboxgl.accessToken = 'pk.eyJ1IjoiZHJvbWFuMDkiLCJhIjoiY2tpcGFzbm1nMGJkazJxbzFsOGg3dW5ueCJ9.nKYluwYKT0XqFDXaafIJTQ';
+// var city = "USA"
+// var queryUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/"+city +".json?access_token=pk.eyJ1IjoiZHJvbWFuMDkiLCJhIjoiY2tpcGFzbm1nMGJkazJxbzFsOGg3dW5ueCJ9.nKYluwYKT0XqFDXaafIJTQ"
+
+// $.ajax({
+//     url: queryUrl,
+//     method : "Get"
+// }).then(function(response){
+//     console.log(response)
+//     var lng = response.features[0].center[0];
+//     var lat = response.features[0].center[1];
+//     console.log(lng, lat)
+
+
+//     var map = new mapboxgl.Map({
+//     container: 'map',
+//     style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+//     center: [lng, lat], // starting position [lng, lat]
+//     zoom: 3 // starting zoom
+// });
+
+// })
+
+// console.log(map)
+
+// var key = "55ad3984ce14bc14559d41e350f4290e"
+var quryUrl = "https://api.musixmatch.com/ws/1.1/chart.artists.get?format=jsonp&callback=callback&country=us&apikey=55ad3984ce14bc14559d41e350f4290e" 
+$.ajax({
+    url: quryUrl,
+    method: "GET"
+}).then(function(response){
+    console.log(response)
+})
+
+
+var imgUrl = "https://pixabay.com/api/?key=19570887-9ab24a9c116677c7d4d20872b&q=chicago&image_type=photo"
+$.ajax({
+    url: imgUrl,
+    method: "GET"
+}).then(function(img){
+    console.log(img)
+    var imgCode = img.hits[0].largeImageURL
+    console.log(imgCode)
+    var imgDiv = $("<img>")
+    imgDiv.attr("src", imgCode)
+    $(".img").append(imgDiv)
+})
+</script>
+    
+</body>
+
+</html>
