@@ -4,71 +4,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Compressed CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
-    <link rel="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <title>Rock and Roam</title>
 
-    <!-- Personal CSS -->
-    <link rel="stylesheet" href="style1.css">
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Map -->
+
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
 
-
-    <title>Project 1</title>
 </head>
 
 <body>
-    <header class="subnav-hero-section">
-        <h1 class="subnav-hero-headline">Music<small>Listeners</small></h1>
-        <ul class="subnav-hero-subnav">
-            <li><a href="#" class="is-active">Music!..</a></li>
-            <li><a href="index.html">What's that one part?</a></li>
-            <li><a target="_blank" href="https://zurb.com/responsive">Share With family & Friends!</a></li>
-        </ul>
-    </header>
-    <form action="">
+    <nav class="purple">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Rock and Roam</a>
+            <!-- <ul id="nav-mobile" class="left hide-on-med-and-down"> -->
+        </div>
+    </nav>
 
-        <section class="lyric-search">
-            <!-- <div class="lyric-search-inner">
-                <p class="subheader">Check out all the songs search below!</p>
-            </div> -->
+    <br>
 
-            <div class="input-group">
-                <input class="input-group-field" type="text" placeholder="Enter city, state, or country here">
-                <div class="input-group-button">
-                    <input type="submit" class="button" value="Search" id="submit">
-                </div>
+    <div class="row">
+        <form class="col s12">
+            <div class="input-group-button">
+                <a class="waves-effect waves-light btn" id="start">start</a>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="container">
+        <!-- start david -->
+
+        <!-- end david -->
+
+        <div class="row">
+            <div class="row">
+                <form class="col s3">
+                    <!-- <label>Choose the genre</label> -->
+                    <select class="browser-default genres" id="genre-list">
+                        <option value="" disabled selected>Choose your genre</option>
+
+                    </select>
+                </form>
+
+                <form class="col s3">
+                    <select class="browser-default records" name="results" id="num-records">
+                        <option value="5">Select number of records</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                    </select>
+                </form>
             </div>
 
-            <label for="Genres">Choose a genre:</label>
-            <select class="genres" id="genre-list">
-                <option value="choose">Choose a genre from list</option>
-            </select>
 
-            <label for="results">Number of records</label>
-            <select class="records" name="results" id="num-records">
-                <option value="5">Select number of records</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-            </select>
+            <!-- <div class="row"> -->
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <textarea id="city-input" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Enter city, state, or country here</label>
+                    </div>
 
-        </section>
+                </div>
+            </form>
+
+            <div class="row">
+                <form class="col s6">
+                    <div class="input-group-button">
+                        <a class="waves-effect waves-light btn" id="submit">enter</a>
+                    </div>
+                </form>
+                <div class="col s6">
+                    <div id='map' style='width: 400px; height: 300px;'></div>
+                </div>
+            </div>
+        </div>
+
+
+
+
         <a></a>
         <h4></h4>
         <!-- map added -->
-        <div id='map' style='width: 400px; height: 300px;'></div>
+
+        <!-- <div id='map' style='width: 400px; height: 300px;'></div> -->
 
         <div class="img"></div>
 
-    </form>
     </div>
-    </section><!-- Compressed jQuery -->
+
+    <!-- Script links -->
+
+    <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
-    <!-- Personal jQuery -->
+    <!-- Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- map -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+
+    <!-- List of genres -->
     <script type='text/javascript' src='music-genre.json'></script>
+    <!-- My script -->
     <script type='text/javascript' src="script.js"></script>
+
+
 
 </body>
 
