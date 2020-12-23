@@ -5,16 +5,16 @@ body{
     background-size: cover;
     min-height: 100vh;   
 
-    /* img { */
+
 border-radius: 8px;
 
         margin: 80px auto;
         text-align: center;
         background-color: #e4ebe8;
-       border-radius: 10px;
+       /* border-radius: 10px;
     border: 4px double #cccccc;
     font-size:28px;
     width: 300px;
-    
+     */
 
     }
