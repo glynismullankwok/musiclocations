@@ -21,10 +21,8 @@ $("#start").click(function (event) {
     event.preventDefault()
     $('.container').attr("style", "display:inline block")
     $('nav').attr("style", "display:inline block")
-    // $('#start').attr("style", "display:none")
     $('.search').attr("style", "display:inline block")
-    // $('.welcome').attr("style", "display:none")
-
+ 
 })
 
 
@@ -51,7 +49,9 @@ $("#num-records").change(function () {
 // Submit button event listener
 $("#submit").click(function (event) {
     event.preventDefault()
-
+    $('html, body').animate({
+        scrollTop: $(".body").offset().top
+    }, 1000);
     $('p').remove()
 
     // Grabs the city name from input
