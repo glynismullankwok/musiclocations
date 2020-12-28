@@ -1,3 +1,21 @@
 .img {
-    width: 400px;
+    width: 100%;
 }
+
+
+.img {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  /* Top left text */
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+
+  #map {
+    margin: 15px;
+  }

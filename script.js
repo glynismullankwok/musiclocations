@@ -2,6 +2,17 @@ document.cookie = "Set-Cookie: SameSite=None; Secure"
 // Points to JSON file of genres
 var mydata = data
 
+document.addEventListener('imgLoaded',()=>{
+    const parallaxEffect = document.querySelectorAll('.parallax');
+    M.parallax.init(parallaxEffect, {});
+
+})
+$(document).ready(function () {
+    console.log($('.parallax'))
+    console.log($('.parallax').parallax())
+});
+
+// $('.search').attr("style", "display:none")
 $('.container').attr("style", "display:none")
 // $('nav').attr("style", "display:none")
 
@@ -10,6 +21,8 @@ $("#start").click(function (event) {
 
     $('.container').attr("style", "display:inline block")
     $('nav').attr("style", "display:inline block")
+    $('.search').attr("style", "display:inline block")
+ 
     $('#start').attr("style", "display:none")
     $('html, body').animate({
         scrollTop: $(".container").offset().top
@@ -38,6 +51,9 @@ $("#num-records").change(function () {
 // Submit button event listener
 $("#submit").click(function (event) {
     event.preventDefault()
+    $('html, body').animate({
+        scrollTop: $(".body").offset().top
+    }, 1000);
     $('p').remove()
     // Grabs the city name from input
     input = $('#city-input').val()
@@ -57,10 +73,20 @@ $("#submit").click(function (event) {
             var newImage = img.hits[ran].largeImageURL //inputs number into array with image url
             // console.log(newImage)
             //appending to doc 
-            var imgDiv = $("<img>")
+            var imgDiv = $(`<img>`)
             imgDiv.attr("src", newImage)
+            // .attr('width','100%')
             $(".img").html(imgDiv)
 
+            document.addEventListener('imgLoaded',()=>{
+                const parallaxEffect = document.querySelectorAll('.parallax');
+                M.parallax.init(parallaxEffect, {});
+            
+            })
+            $(document).ready(function () {
+                console.log($('.parallax'))
+                console.log($('.parallax').parallax())
+            });
         })
 
         // Adds a map to the DOM based on the URL
@@ -173,6 +199,12 @@ $("#submit").click(function (event) {
                      //buttons 
 
                     var button = $("<a>").addClass("waves-effect waves-light btn modal-trigger btn").attr("href", "#modal1").text("Lyrics")
+
+                    // Appends the artist, URL, track name to DOM
+                    $('h4').append($(`<p class="top-left">${artistNameParse}</p>`));
+                    $('h4').append($(`<p class="top-left"><a href=${lyricsParse} target="_blank">${trackNameParse}</a></p>`));
+
+                    
 
 
                     var div = $("<div>").attr("id", "modal1").addClass("modal")
