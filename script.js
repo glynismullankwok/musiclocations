@@ -175,9 +175,9 @@ $("#submit").click(function (event) {
                     var button = $("<a>").addClass("waves-effect waves-light btn modal-trigger btn").attr("href", "#modal1").text("Lyrics")
 
 
-                    // var div = $("<div>").attr("id", "modal1").addClass("modal")
-                    // var div2 = $("<div>").addClass("modal-content")
-                    // var header = $("<h2>").text(artistNameParse )
+                    var div = $("<div>").attr("id", "modal1").addClass("modal")
+                    var div2 = $("<div>").addClass("modal-content")
+                    var header = $("<h2>").text(artistNameParse )
 
                     var divFooter = $("<div>").addClass("modal-footer")
                     var footer = $("<a>").attr("href", "#!").addClass("modal-close waves-effect waves-green btn-flat").text("Close")
