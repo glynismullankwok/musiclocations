@@ -13,7 +13,7 @@ $(document).ready(function () {
 });
 
 // $('.search').attr("style", "display:none")
-$('.container').attr("style", "display:none")
+// $('.container').attr("style", "display:none")
 // $('nav').attr("style", "display:none")
 
 $("#start").click(function (event) {
