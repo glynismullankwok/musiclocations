@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatable" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock and Roam</title>
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Map -->
+
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+
+<body>
+    <!-- <nav class="purple">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Rock and Roam</a>
+             <ul id="nav-mobile" class="left hide-on-med-and-down"> -->
+    <!-- </div>
+    </nav>  -->
+
+    <!-- <br> -->
+
+    <!-- <div class="row welcome">
+        <form class="col s12">
+            <div class="input-group-button">
+                <a class="waves-effect waves-light btn" id="start">start</a>
+            </div>
+        </form>
+    </div> -->
+
+    <!--  -->
+    <div class="parallax-container">
+        <div class="parallax"><img
+                src="https://images.theconversation.com/files/221359/original/file-20180601-142066-1aneosc.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
+                alt="image of earth">
+        </div>
+    </div>
+
+    <div class="section yellow">
+
+        <div class="row container">
+            <h2 class="header">Rock and Roam</h2>
+            <p class="grey-text text-darken-3 lighten-3">Welcome to Rock and Roam. An interactive website for music
+                lovers and those with wonderlust alike. Here we have incorporated travel with music. Just type in your
+                favorite city and see
+                the music that was inspired by it. Come and check us out, click the button below and start your own
+                musical journey.
+            </p>
+
+            <div class="search">
+                <!-- start david -->
+
+                <!-- end david -->
+
+                <!-- <div class="row"> -->
+                <div class="row">
+                    <form class="col s3">
+                        <!-- <label>Choose the genre</label> -->
+                        <select class="browser-default genres" id="genre-list">
+                            <option value="" disabled selected>Choose your genre</option>
+
+                        </select>
+                    </form>
+
+                    <form class="col s3">
+                        <select class="browser-default records" name="results" id="num-records">
+                            <option value="5">Select number of records</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                        </select>
+                    </form>
+                </div>
+
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <textarea id="city-input" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Enter city, state, or country here</label>
+                        </div>
+
+                    </div>
+                </form>
+
+                <div class="row">
+                    <form class="col s6">
+                        <div class="input-group-button">
+                            <a class="waves-effect waves-light btn" id="submit">enter</a>
+                        </div>
+                    </form>
+                </div>
+                <!-- <a class="waves-effect waves-light btn"><i class="material-icons left">music_note</i>button</a> -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="parallax-container">
+        <div class="parallax img">
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyM_hK1v7WqR08ZlKBcWDsQPesGoDBgxiLnQ&usqp=CAU" alt=image of a concert>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    <!--  -->
+
+    <div class="row body">
+
+        <div class="col s6">
+
+            <a></a>
+            <h4></h4>
+        </div>
+
+        <div class="col s6">
+            <div id='map' style='margin: 30px; width: 400px; height: 400px;border-radius: 50%;'></div>        
+        </div>
+
+    </div>
+    <!-- map added -->
+
+    <!-- <div id='map' style='width: 400px; height: 300px;'></div> -->
+
+
+    <!-- <div class="img"></div> -->
+
+
+    </div>
+
+    <footer class="page-footer docs-footer">
+        <div class="container">
+        <div class="row" style="margin-bottom: 0">
+           
+        </div>
+        </div>
+
+    </footer>
+
+    <!-- Script links -->
+
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- map -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+
+    <!-- List of genres -->
+    <script type='text/javascript' src='music-genre.json'></script>
+    <!-- My script -->
+    <script type='text/javascript' src="script.js"></script>
+
+
+
+</body>
+
+</html>
