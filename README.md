@@ -18,7 +18,7 @@
  ### Group 4
 
 * [github repo](https://github.com/glynismullankwok/musiclocations)
- * Deployed: [url](#)
+ * Deployed: [url](https://glynismullankwok.github.io/musiclocations/)
 
 
 ## Description
