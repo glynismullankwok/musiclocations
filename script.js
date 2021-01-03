@@ -14,19 +14,24 @@ $(document).ready(function () {
 
 // $('.search').attr("style", "display:none")
 // $('.container').attr("style", "display:none")
-// $('nav').attr("style", "display:none")
+$('#results').attr("style", "display:none")
 
 $("#start").click(function (event) {
     event.preventDefault()
+
 
     $('.container').attr("style", "display:inline block")
     $('nav').attr("style", "display:inline block")
     $('.search').attr("style", "display:inline block")
  
     $('#start').attr("style", "display:none")
+    
+
+
     $('html, body').animate({
         scrollTop: $(".container").offset().top
     }, 1000);
+
 })
 
 
@@ -51,6 +56,8 @@ $("#num-records").change(function () {
 // Submit button event listener
 $("#submit").click(function (event) {
     event.preventDefault()
+    $('#results').attr("style", "display:inline block")
+
     $('html, body').animate({
         scrollTop: $(".body").offset().top
     }, 1000);
@@ -201,9 +208,9 @@ $("#submit").click(function (event) {
 
                     var button = $("<a>").addClass("waves-effect waves-light btn modal-trigger btn").attr("href", "#modal1").text("Lyrics")
 
-                    // Appends the artist, URL, track name to DOM
-                    $('h4').append($(`<p class="top-left">${artistNameParse}</p>`));
-                    $('h4').append($(`<p class="top-left"><a href=${lyricsParse} target="_blank">${trackNameParse}</a></p>`));
+                    // // Appends the artist, URL, track name to DOM
+                    // $('h4').append($(`<p class="top-left">${artistNameParse}</p>`));
+                    // $('h4').append($(`<p class="top-left"><a href=${lyricsParse} target="_blank">${trackNameParse}</a></p>`));
 
                     
 
