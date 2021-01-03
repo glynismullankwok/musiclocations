@@ -1,96 +1,22 @@
-body {
-    /* background-color: rbg(196, 180, 203); */
-    margin: 20px;
-    padding: 20px;
-    margin: 20px;
-    background-color: #cdd1ca;
-    background:url('./m1.png') no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;   
-    /* background-color: blue; */
 
-    
-}
-/* CSS Styling for header & Nav Tabs */
-.subnav-hero-section {
-    text-align: center;
-    background: #6a9c8b;
-    background-size: cover;
+.img {
     width: 100%;
-    margin-left: 20px;
-    padding-top: 20px;
+}
+
+
+.img {
     position: relative;
-    overflow: visible;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    height: 300px;
-  }
-  .subnav-hero-section .subnav-hero-headline {
-    color: #fefefe;
-  }
-  .subnav-hero-subnav {
-    float: none;
-    position: absolute;
     text-align: center;
-    margin: 0 auto;
-    bottom: 0;
-    width: 100%;
+    color: white;
   }
-  .subnav-hero-subnav li {
-    float: none;
-    display: inline-block;
-  }
-  .subnav-hero-subnav li a {
-    padding: 0.9rem 1rem;
-    font-size: 0.75rem;
-    color: #FEFEFE;
-    text-transform: uppercase;
-    display: block;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: all 0.35s ease-in-out;
-  }
-  .subnav-hero-subnav li a.is-active {
-    background: rgba(254, 254, 254, 0.15);
-  }
-  .subnav-hero-subnav li a:hover {
-    background: rgba(254, 254, 254, 0.15);
-}
-.subnav-hero-subnav li a:hover {
-  background: rgba(254, 254, 254, 0.15);
-}
-.container {
-  background-color: wheat;
-  /* background-image: url("m2.png"); */
-  align-items: center;
-  width: 90%;
-  margin:20 auto;
-  padding:20px;
-}
-.input-group {
-  width: 80%;
-  margin-left:20px;
-  background-color: #ffff;
-}
-.myMap{
-  width: 500px;
-   height: 400px;
-   display: flex;
-   flex-wrap: wrap;
-}
-.img { 
-  display: flex;
-  flex-wrap: wrap;
-}
-.img img{
-  width: 100%;
-  height: auto;
-}
 
+  /* Top left text */
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+
+  #map {
+    margin: 15px;
+  }
