@@ -14,7 +14,7 @@ $(document).ready(function () {
 
 // $('.search').attr("style", "display:none")
 // $('.container').attr("style", "display:none")
-$('#lyrics').attr("style", "display:none")
+$('#results').attr("style", "display:none")
 
 
 $("#start").click(function (event) {
@@ -57,7 +57,7 @@ $("#num-records").change(function () {
 // Submit button event listener
 $("#submit").click(function (event) {
     event.preventDefault()
-    $('#lyrics').attr("style", "display:inline block")
+    $('#results').attr("style", "display:inline-block")
 
     $('html, body').animate({
         scrollTop: $(".body").offset().top
