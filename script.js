@@ -109,6 +109,7 @@ $("#submit").click(function (event) {
                 style: 'mapbox://styles/mapbox/satellite-streets-v11', // stylesheet location
                 center: [lng, lat], // starting position [lng, lat]
                 zoom: 8 // starting zoom
+                
             });
             // console.log(map)
 
