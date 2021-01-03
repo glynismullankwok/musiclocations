@@ -1,14 +1,11 @@
 
 .img {
     width: 100%;
-}
-
-
-.img {
     position: relative;
     text-align: center;
     color: white;
-  }
+}
+
 
   /* Top left text */
 .top-left {
@@ -20,3 +17,10 @@
   #map {
     margin: 15px;
   }
+
+  #results {
+    background-color: #E8E8E8	;
+    width: 100%;
+    margin: 0px;
+  }
+

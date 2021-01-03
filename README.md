@@ -28,19 +28,16 @@ Rock and Roam is an interactive website where users can enter the name of a city
 ## Usage Instructions
 
 1. Home page 
-![Homepage](./Images/pro1.png)
+![Homepage](./Images/screenshot-1.jpg)
 
-2. Search music page
-![Homepage](./Images/pro2.png)
+2. After search
+![Homepage](./Images/screenshot-2.jpg)
 
-3. Search music by genre, number of records and city
-![Homepage](./Images/pro3.png)
+3. Searched city image response
+![Homepage](./Images/screenshot-3.jpg)
 
-4. Searched city image response
-![Homepage](./Images/pro4.png)
-
-5. Searched music response and map
-![Homepage](./Images/pro5.png)
+4. Searched music response and map
+![Homepage](./Images/screenshot-4.jpg)
 
 ## Acknowledgements
 
