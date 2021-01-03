@@ -117,7 +117,7 @@ $("#submit").click(function (event) {
         $.ajax({
             type: "GET",
             data: {
-                apikey: "4d79a850d35d2e78003074885fedf889",
+                apikey: "bdcef4737b8ea3d831700911e2db6e95",
                 // Input is from the form
                 q_lyrics: input,
                 // Selected from the genre drop down
@@ -159,7 +159,7 @@ $("#submit").click(function (event) {
                         $.ajax({
                             type: "GET",
                             data: {
-                                apikey: "4d79a850d35d2e78003074885fedf889",
+                                apikey: "bdcef4737b8ea3d831700911e2db6e95",
                                 track_id: trackIdforLyrics,
                                 format: "jsonp",
                                 // callback: "jsonp_callback",
