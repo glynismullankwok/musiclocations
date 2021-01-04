@@ -2,6 +2,7 @@ document.cookie = "Set-Cookie: SameSite=None; Secure"
 // Points to JSON file of genres
 var mydata = data
 
+// Create parallax automation with background images
 document.addEventListener('imgLoaded',()=>{
     const parallaxEffect = document.querySelectorAll('.parallax');
     M.parallax.init(parallaxEffect, {});
@@ -12,28 +13,9 @@ $(document).ready(function () {
     console.log($('.parallax').parallax())
 });
 
-// $('.search').attr("style", "display:none")
-// $('.container').attr("style", "display:none")
+
+// Hide the results block until search is done
 $('#results').attr("style", "display:none")
-
-
-$("#start").click(function (event) {
-    event.preventDefault()
-
-
-    $('.container').attr("style", "display:inline block")
-    $('nav').attr("style", "display:inline block")
-    $('.search').attr("style", "display:inline block")
- 
-    $('#start').attr("style", "display:none")
-    
-
-
-    $('html, body').animate({
-        scrollTop: $(".container").offset().top
-    }, 1000);
-
-})
 
 
 // adds these to global variable
@@ -145,14 +127,13 @@ $("#submit").click(function (event) {
             success: function (data) {
                 console.log(data);
                 // console.log(selectedRecords)
-                var trackArray = []
+                // var trackArray = []
                 
 
                 // Loops through the number selected for 
                 function looping() {
                 for (var i = 0; i < Number(selectedRecords); i++) {
 
-                    // console.log(data.message.body.track_list[i])
                     // Gets track name, artist, URL of lyrics
                     var trackName = JSON.stringify(data.message.body.track_list[i].track.track_name )
                     var artistName = JSON.stringify(data.message.body.track_list[i].track.artist_name)
@@ -161,74 +142,45 @@ $("#submit").click(function (event) {
                     var trackIdforLyrics = data.message.body.track_list[i].track.track_id
 
                     console.log(trackName)
-                    lyricsSnippet()
 
-                    ////getting lyrics Snippet
-                    function lyricsSnippet() {
-                        $.ajax({
-                            type: "GET",
-                            data: {
-                                apikey: "bdcef4737b8ea3d831700911e2db6e95",
-                                track_id: trackIdforLyrics,
-                                format: "jsonp",
-                                // callback: "jsonp_callback",
-                            },
-                            url: "https://api.musixmatch.com/ws/1.1/track.lyrics.get",
-                            dataType: "jsonp",
-                            // jsonpCallback: 'jsonp_callback',
-                            contentType: 'application/json',
-                            success: function (lyricsData) {
+                    // 
+                    // lyricsSnippet()
 
-                                if (lyricsData) {
-                                    var lyrics = JSON.stringify(lyricsData.message.body.lyrics.lyrics_body)
-                                    // var lyricsP = $("<p>").text((lyrics))
-                                    // div2.append(lyricsP)
-                                }
-                            },
-                            error: function (jqXHR, textStatus, errorThrown) {
-                                console.log(jqXHR);
-                                console.log(textStatus);
-                                console.log(errorThrown);
-                            }
-                        })
+                    ////getting lyrics Snippet: commenting out for now, possible enhancement option
+                    // function lyricsSnippet() {
+                    //     $.ajax({
+                    //         type: "GET",
+                    //         data: {
+                    //             apikey: "bdcef4737b8ea3d831700911e2db6e95",
+                    //             track_id: trackIdforLyrics,
+                    //             format: "jsonp",
+                    //             // callback: "jsonp_callback",
+                    //         },
+                    //         url: "https://api.musixmatch.com/ws/1.1/track.lyrics.get",
+                    //         dataType: "jsonp",
+                    //         // jsonpCallback: 'jsonp_callback',
+                    //         contentType: 'application/json',
+                    //         success: function (lyricsData) {
 
-                    }
-                    lyricsSnippet()
+                    //             if (lyricsData) {
+                    //                 var lyrics = JSON.stringify(lyricsData.message.body.lyrics.lyrics_body)
+                    //                 // var lyricsP = $("<p>").text((lyrics))
+                    //                 // div2.append(lyricsP)
+                    //             }
+                    //         },
+                    //         error: function (jqXHR, textStatus, errorThrown) {
+                    //             console.log(jqXHR);
+                    //             console.log(textStatus);
+                    //             console.log(errorThrown);
+                    //         }
+                    //     })
 
-                    // --------
+                    // }
+                    // lyricsSnippet()
+
                     lyricsParse = JSON.parse(lyricsUrl)
                     trackNameParse = JSON.parse(trackName)
                     artistNameParse = JSON.parse(artistName)
-                    // singParse = JSON.parse(this.val(lyrics))
-                    
-                    trackArray.push(trackNameParse)
-                    //  console.log(trackNameParse)
-                //      var title = $(this).val()
-                //    console.log(title)
-                     //buttons 
-
-                    var button = $("<a>").addClass("waves-effect waves-light btn modal-trigger btn").attr("href", "#modal1").text("Lyrics")
-
-                    // // Appends the artist, URL, track name to DOM
-                    // $('h4').append($(`<p class="top-left">${artistNameParse}</p>`));
-                    // $('h4').append($(`<p class="top-left"><a href=${lyricsParse} target="_blank">${trackNameParse}</a></p>`));
-
-                    
-
-
-                    var div = $("<div>").attr("id", "modal1").addClass("modal")
-                    var div2 = $("<div>").addClass("modal-content")
-                    var header = $("<h2>").text(artistNameParse )
-
-                    var divFooter = $("<div>").addClass("modal-footer")
-                    var footer = $("<a>").attr("href", "#!").addClass("modal-close waves-effect waves-green btn-flat").text("Close")
-                 
-
-                    
-                   div2.append(header)
-                   divFooter.append(footer)
-                   div.append(div2, divFooter)
-                   console.log(div)
 
                     // Appends the artist, URL, track name to DOM
                     $('h4').append($(`<p class="artist"
@@ -240,48 +192,10 @@ $("#submit").click(function (event) {
                     <a class="song" href=${lyricsParse} target="_blank">${trackNameParse}</a>
                     </p>`));
 
-
-                    $("h4").append(button, div)
-                    $(document).ready(function(){
-                        $('.modal').modal();
-                      });
-
                 }}
                 
-                //   var div = $("<div>").attr("id", "modal1").addClass("modal")
-
-                //     var div2 = $("<div>").addClass("modal-content")
-                //     var header = $("<h3>").text(artistNameParse[0])
-
-                //     var divFooter = $("<div>").addClass("modal-footer")
-
-                //     var footer = $("<a>").attr("href", "#!").addClass("modal-close waves-effect waves-green btn-flat").text("Close")
-
-                    
-                //    div2.append(header)
-                //    divFooter.append(footer)
-                //    div.append(div2, divFooter)
-                //    console.log(div)
-                //    $("h4").append(div)
-
-
                 looping()
-                /// removing duplicartes 
-                    var firstWord = []
-                    var words =[]
-                    console.log(trackArray)
-                    for (var i = 0; i < trackArray.length; i++){
-                    var words = trackArray[i].split(" ");
-                    firstWord.push(words[0]);
-                    var unique = [... new Set(words)]
-                    // console.log(unique)
-                
-                    // console.log(firstWord)
-                    // console.log(unique)
-                    // if (words.length !== trackArray.length){
-                    //         return looping( 
-                    // }
-                    }
+     
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR);
