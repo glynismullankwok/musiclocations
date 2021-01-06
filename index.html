@@ -31,7 +31,8 @@
         <div class="row container">
             <!-- Landing home page -->
             <h2 class="header">Rock and Roam</h2>
-            <p style="font-size: x-large;color: midnightblue; font-family: fantasy">Welcome to Rock and Roam. An interactive website for music
+            <p style="font-size: x-large;color: midnightblue; font-family: fantasy">Welcome to Rock and Roam. An
+                interactive website for music
                 lovers and those with wonderlust alike. Here we have incorporated travel with music. Just type in your
                 favorite city and see
                 the music that was inspired by it. Come and check us out, click the button below and start your own
@@ -39,18 +40,18 @@
             </p>
 
             <div class="search">
-        
+
                 <!-- <div class="row"> -->
                 <div class="row">
-                    <form class="col s3">
+                    <form class="col m3 s12">
                         <!-- <label>Choose the genre</label> -->
                         <select class="browser-default genres" id="genre-list">
                             <option value="" disabled selected>Choose your genre</option>
 
                         </select>
                     </form>
-                        <!-- Number of records selector -->
-                    <form class="col s3">
+                    <!-- Number of records selector -->
+                    <form class="col m4 s12">
                         <select class="browser-default records" name="results" id="num-records">
                             <option value="5">Select number of records</option>
                             <option value="5">5</option>
@@ -63,18 +64,20 @@
 
 
                 <!-- <div class="row"> -->
-                    <!-- Input for city name -->
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="city-input" class="materialize-textarea" type="text">
-                            <label for="textarea1">Enter city, state, or country here</label>
+                <!-- Input for city name -->
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col m6 s12">
+                                <input id="city-input" class="materialize-textarea" type="text">
+                                <label for="textarea1">Enter city, state, or country here</label>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
                 <!-- Enter button -->
                 <div class="row">
-                    <form class="col s6">
+                    <form class="col s8 m6">
                         <div class="input-group-button">
                             <a class="waves-effect waves-light btn" id="submit">enter</a>
                         </div>
@@ -83,11 +86,11 @@
             </div>
         </div>
     </div>
-<!-- Parallax image--default homepage image here, will get replaced after search -->
+    <!-- Parallax image--default homepage image here, will get replaced after search -->
     <div class="parallax-container">
         <div class="parallax img">
-            <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyM_hK1v7WqR08ZlKBcWDsQPesGoDBgxiLnQ&usqp=CAU" alt="image of a concert">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyM_hK1v7WqR08ZlKBcWDsQPesGoDBgxiLnQ&usqp=CAU"
+                alt="image of a concert">
         </div>
     </div>
 
@@ -96,15 +99,15 @@
 
     <div id="results" class="row body">
 
-        <div class="col s6">
-<!-- Appending results to DOM here -->
+        <div class="col s12 m6">
+            <!-- Appending results to DOM here -->
             <a></a>
             <h4></h4>
         </div>
-<!-- Map here -->
-        <div class="col s6">
-            <div id='map' style='margin: 30px; width: 400px; height: 400px;border-radius: 50%;'></div>        
-        </div>
+        <!-- Map here -->
+        <!-- <div class="col s3 m6"> -->
+        <div class="col s3 m6" id='map' style='margin: 30px; width: 400px; height: 400px;border-radius: 50%;'></div>
+        <!-- </div> -->
 
     </div>
 
@@ -117,7 +120,7 @@
                 </div>
             </div>
         </div>
-    </footer> 
+    </footer>
 
 
     <!-- Script links -->
